@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://log10.io/schemas/feedback.json",
+  "title": "Feedback",
+  "description": "A structured evaluation record for one or more Log10 completions.",
+  "type": "object",
+  "required": ["task_id", "json_values", "matched_completion_ids", "comment"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier for this feedback."
+    },
+    "created_at_ms": {
+      "type": "number",
+      "description": "Unix epoch timestamp (milliseconds) when this feedback was created."
+    },
+    "task_id": {
+      "type": "string",
+      "description": "The FeedbackTask identifier that defines the scoring schema for this feedback."
+    },
+    "json_values": {
+      "type": "object",
+      "description": "The scored values for this feedback, conforming to the FeedbackTask json_schema."
+    },
+    "matched_completion_ids": {
+      "type": "array",
+      "description": "Identifiers of completions associated with this feedback.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "comment": {
+      "type": "string",
+      "description": "Free-text reviewer comment accompanying the scored feedback."
+    },
+    "completions_summary": {
+      "type": "string",
+      "description": "AI-generated summary of the completions evaluated in this feedback record."
+    }
+  }
+}

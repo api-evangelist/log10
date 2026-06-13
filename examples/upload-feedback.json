@@ -1,0 +1,38 @@
+{
+  "example": "Upload Feedback",
+  "description": "Submit human feedback for specific completion IDs using the Log10 Feedback API.",
+  "request": {
+    "method": "POST",
+    "url": "https://log10.io/api/v1/feedback",
+    "headers": {
+      "X-Log10-Token": "YOUR_API_TOKEN",
+      "X-Log10-Organization": "YOUR_ORGANIZATION_ID",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "task_id": "task_rating123",
+      "json_values": {
+        "rating": 4,
+        "accuracy": "high",
+        "tone": "professional"
+      },
+      "matched_completion_ids": ["cmpl_def456"],
+      "comment": "Response was accurate and concise.",
+      "completion_ids": ["cmpl_def456"]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": "fb_ghi789",
+      "task_id": "task_rating123",
+      "json_values": {
+        "rating": 4,
+        "accuracy": "high",
+        "tone": "professional"
+      },
+      "matched_completion_ids": ["cmpl_def456"],
+      "comment": "Response was accurate and concise."
+    }
+  }
+}

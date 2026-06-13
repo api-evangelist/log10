@@ -1,0 +1,111 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "log10": "https://log10.io/vocab#",
+
+    "Completion": "log10:Completion",
+    "Feedback": "log10:Feedback",
+    "FeedbackTask": "log10:FeedbackTask",
+    "Session": "log10:Session",
+
+    "id": "@id",
+    "organization_id": {
+      "@id": "log10:organizationId",
+      "@type": "xsd:string"
+    },
+    "kind": {
+      "@id": "log10:completionKind",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "log10:completionStatus",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "log10:tags",
+      "@container": "@list"
+    },
+    "request": {
+      "@id": "log10:request",
+      "@type": "@json"
+    },
+    "response": {
+      "@id": "log10:response",
+      "@type": "@json"
+    },
+    "stacktrace": {
+      "@id": "log10:stacktrace",
+      "@container": "@list"
+    },
+    "session_id": {
+      "@id": "log10:sessionId",
+      "@type": "xsd:string"
+    },
+    "duration": {
+      "@id": "log10:duration",
+      "@type": "xsd:decimal"
+    },
+    "failure_kind": {
+      "@id": "log10:failureKind",
+      "@type": "xsd:string"
+    },
+    "failure_reason": {
+      "@id": "log10:failureReason",
+      "@type": "xsd:string"
+    },
+    "created_at_ms": {
+      "@id": "log10:createdAtMs",
+      "@type": "xsd:long"
+    },
+    "task_id": {
+      "@id": "log10:taskId",
+      "@type": "xsd:string"
+    },
+    "json_values": {
+      "@id": "log10:jsonValues",
+      "@type": "@json"
+    },
+    "matched_completion_ids": {
+      "@id": "log10:matchedCompletionIds",
+      "@container": "@list"
+    },
+    "comment": {
+      "@id": "log10:comment",
+      "@type": "xsd:string"
+    },
+    "completions_summary": {
+      "@id": "log10:completionsSummary",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "instruction": {
+      "@id": "log10:instruction",
+      "@type": "xsd:string"
+    },
+    "json_schema": {
+      "@id": "log10:jsonSchema",
+      "@type": "@json"
+    },
+    "completion_tags_selector": {
+      "@id": "log10:completionTagsSelector",
+      "@type": "@json"
+    },
+    "file": {
+      "@id": "log10:stackFile",
+      "@type": "xsd:string"
+    },
+    "line": {
+      "@id": "log10:stackLine",
+      "@type": "xsd:string"
+    },
+    "lineno": {
+      "@id": "log10:stackLineNo",
+      "@type": "xsd:integer"
+    }
+  }
+}

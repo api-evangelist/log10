@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://log10.io/schemas/completion.json",
+  "title": "Completion",
+  "description": "A logged LLM completion record captured by the Log10 platform.",
+  "type": "object",
+  "required": ["organization_id"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier for this completion."
+    },
+    "organization_id": {
+      "type": "string",
+      "description": "The unique identifier for the organization."
+    },
+    "kind": {
+      "type": "string",
+      "description": "The kind of completion: chat messages or a single prompt.",
+      "enum": ["chat", "prompt"]
+    },
+    "status": {
+      "type": "string",
+      "description": "The lifecycle status of this completion.",
+      "enum": ["started", "finished", "failed"]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Tag strings applied to this completion for filtering and task matching.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "request": {
+      "type": "object",
+      "description": "The LLM request payload (CreateChatCompletionRequest format)."
+    },
+    "response": {
+      "type": "object",
+      "description": "The LLM response payload (CreateChatCompletionResponse format)."
+    },
+    "stacktrace": {
+      "type": "array",
+      "description": "Code location stacktrace captured at inference time.",
+      "items": {
+        "type": "object",
+        "required": ["file", "line", "lineno", "name"],
+        "properties": {
+          "file": {
+            "type": "string",
+            "description": "The source file path."
+          },
+          "line": {
+            "type": "string",
+            "description": "The source line content."
+          },
+          "lineno": {
+            "type": "number",
+            "description": "The line number in the source file."
+          },
+          "name": {
+            "type": "string",
+            "description": "The function or module name."
+          }
+        }
+      }
+    },
+    "session_id": {
+      "type": "string",
+      "description": "The session this completion belongs to."
+    },
+    "duration": {
+      "type": "number",
+      "description": "Duration of the LLM call in seconds."
+    },
+    "failure_kind": {
+      "type": "string",
+      "description": "Category of failure if the completion failed."
+    },
+    "failure_reason": {
+      "type": "string",
+      "description": "Human-readable reason for failure if the completion failed."
+    }
+  }
+}

@@ -42,6 +42,8 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.log10.io/observability/logs
+      - type: OpenAPI
+        url: openapi/log10-logging-openapi.yml
   - name: Log10 Feedback API
     description: >
       API for submitting human and automated feedback on LLM completions,
@@ -97,6 +99,20 @@ common:
     url: rate-limits/log10-rate-limits.yml
   - type: FinOps
     url: finops/log10-finops.yml
+  - type: Vocabulary
+    url: vocabulary/log10-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/log10-context.jsonld
+  - type: JSONSchema
+    url: json-schema/completion.json
+  - type: JSONSchema
+    url: json-schema/feedback.json
+  - type: JSONSchema
+    url: json-schema/feedback-task.json
+  - type: JSONSchema
+    url: json-schema/session.json
+  - type: Blogs
+    url: blogs/blogs.json
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

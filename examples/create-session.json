@@ -1,0 +1,21 @@
+{
+  "example": "Create a Session",
+  "description": "Create a new Log10 session to group multiple LLM completions into a single trace.",
+  "request": {
+    "method": "POST",
+    "url": "https://log10.io/api/v1/sessions",
+    "headers": {
+      "X-Log10-Token": "YOUR_API_TOKEN",
+      "X-Log10-Organization": "YOUR_ORGANIZATION_ID"
+    },
+    "body": {}
+  },
+  "response": {
+    "status": 201,
+    "body": {
+      "session": {
+        "id": "sess_xyz789"
+      }
+    }
+  }
+}

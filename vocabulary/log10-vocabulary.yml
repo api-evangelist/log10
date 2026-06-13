@@ -1,0 +1,130 @@
+vocabulary:
+  name: Log10 API Vocabulary
+  description: >
+    Domain vocabulary for the Log10 LLMOps platform, covering completions logging,
+    feedback collection, evaluation tasks, and session management for LLM observability.
+  version: 1.0.0
+  provider: log10
+  terms:
+    - term: Completion
+      definition: >
+        A logged record of an LLM request and response, capturing the full prompt,
+        model output, tags, session context, status, and cost metadata for a single
+        inference call to any supported LLM provider.
+      type: entity
+      properties:
+        - id
+        - organization_id
+        - kind
+        - status
+        - tags
+        - request
+        - response
+        - stacktrace
+        - session_id
+        - duration
+        - failure_kind
+        - failure_reason
+
+    - term: Feedback
+      definition: >
+        A structured evaluation record submitted by a human reviewer or automated
+        system for one or more completions, scored according to a defined FeedbackTask
+        schema and optionally matched by completion tags.
+      type: entity
+      properties:
+        - id
+        - task_id
+        - json_values
+        - matched_completion_ids
+        - comment
+        - completions_summary
+
+    - term: FeedbackTask
+      definition: >
+        A reusable evaluation template that defines the JSON Schema for feedback
+        values, instructions for reviewers, and tag-based selectors that determine
+        which completions should surface for grading.
+      type: entity
+      properties:
+        - id
+        - name
+        - instruction
+        - json_schema
+        - completion_tags_selector
+        - created_at_ms
+
+    - term: Session
+      definition: >
+        A grouping construct that associates multiple LLM completions into a single
+        logical trace, enabling chain-of-thought debugging and multi-turn conversation
+        analysis across a workflow execution.
+      type: entity
+      properties:
+        - id
+
+    - term: completion_kind
+      definition: >
+        Classifies whether a completion used a chat messages format (multi-turn)
+        or a single prompt string format.
+      type: enumeration
+      values:
+        - chat
+        - prompt
+
+    - term: completion_status
+      definition: >
+        Lifecycle state of a logged completion indicating whether the LLM call
+        is in progress, successfully completed, or failed.
+      type: enumeration
+      values:
+        - started
+        - finished
+        - failed
+
+    - term: ungraded_completion
+      definition: >
+        A completion that matches the tag selector for a FeedbackTask but has not
+        yet received a Feedback submission, representing a pending review item in
+        the human evaluation queue.
+      type: concept
+
+    - term: AutoFeedback
+      definition: >
+        AI-generated feedback predictions produced automatically by Log10's evaluation
+        engine for completions, providing scoring estimates without requiring human
+        reviewer intervention.
+      type: concept
+
+    - term: X-Log10-Token
+      definition: >
+        API key authentication header required on all Log10 REST API requests,
+        issued per user account and scoped to the organization.
+      type: security
+
+    - term: X-Log10-Organization
+      definition: >
+        Required request header identifying the Log10 organization scope for all
+        API operations, ensuring completions, feedback, and tasks are isolated
+        per tenant.
+      type: security
+
+    - term: completion_tags_selector
+      definition: >
+        A tag-matching expression on a FeedbackTask that determines which completions
+        are surfaced for grading, enabling targeted evaluation workflows for specific
+        prompt categories or model variants.
+      type: property
+
+    - term: json_schema
+      definition: >
+        A JSON Schema object embedded in a FeedbackTask that defines the structure
+        and validation rules for feedback values submitted against that task.
+      type: property
+
+    - term: stacktrace
+      definition: >
+        An array of code location objects (file, line, lineno, name) captured
+        at the time of an LLM call, used for debugging prompt chain failures and
+        tracing the origin of each completion in the codebase.
+      type: property

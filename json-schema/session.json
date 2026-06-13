@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://log10.io/schemas/session.json",
+  "title": "Session",
+  "description": "A Log10 session grouping multiple LLM completions into a single logical trace.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier for this session."
+    }
+  }
+}
