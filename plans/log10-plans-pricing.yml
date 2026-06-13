@@ -1,0 +1,64 @@
+name: Log10 Plans and Pricing
+description: >
+  Log10 offers tiered pricing plans for LLM logging, evaluation, and feedback
+  management. Plans scale from a free developer tier through enterprise options
+  with dedicated support and advanced analytics.
+url: https://log10.io/pricing
+specificationVersion: "0.1"
+plans:
+  - name: Free
+    description: >
+      Entry-level plan for individual developers and small projects exploring
+      LLM logging and basic observability features.
+    url: https://log10.io/pricing
+    price: 0
+    currency: USD
+    billing: monthly
+    features:
+      - Up to 1 million logged requests
+      - Basic metrics and usage reporting
+      - Python SDK access
+      - Community support
+      - Session and tag-based filtering
+      - Prompt chain debugging
+  - name: Pro
+    description: >
+      Advanced plan for teams building production LLM applications that require
+      unlimited logging, accuracy monitoring, automated feedback, and dedicated
+      support.
+    url: https://log10.io/pricing
+    price: 0
+    currency: USD
+    billing: monthly
+    pricingModel: contact-for-pricing
+    features:
+      - Unlimited logged requests
+      - Accuracy monitoring
+      - AutoFeedback (AI-generated feedback)
+      - Human feedback workflows
+      - Model benchmarking and comparison
+      - Cost tracking API
+      - Per-model usage reporting
+      - Tag-based filtering and segmentation
+      - Dedicated support
+  - name: Enterprise
+    description: >
+      Enterprise plan for large organizations with custom data retention,
+      compliance requirements, and dedicated infrastructure needs including
+      optional VPC deployment.
+    url: https://log10.io/pricing
+    price: 0
+    currency: USD
+    billing: annual
+    pricingModel: contact-for-pricing
+    features:
+      - All Pro features
+      - Enterprise-grade SLA
+      - Custom data retention policies
+      - SOC 2 Type II compliance
+      - HIPAA compliance
+      - Optional VPC deployment
+      - Custom integrations
+      - BigQuery data store integration
+      - Dedicated account management
+      - Custom anonymization policies

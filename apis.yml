@@ -1,0 +1,102 @@
+aid: log10
+name: Log10
+description: >
+  Log10 is an LLMOps platform that provides REST API and SDK capabilities for
+  capturing, logging, and managing LLM completions across major providers such
+  as OpenAI, Anthropic, Google Gemini, Mistral, and Meta Llama. The platform
+  enables engineering teams to debug prompt chains, run automated evaluations,
+  collect human and AI-generated feedback, and benchmark model outputs at scale.
+  Log10 supports session-based tracing, tag-based filtering, and cost tracking
+  to help organizations optimize accuracy and operational efficiency of their
+  generative AI applications. Developers can integrate via a Python SDK, TypeScript
+  SDK, or directly via the REST and GraphQL API using an API token and organization ID.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/log10/refs/heads/main/apis.yml
+created: 2026-06-13
+modified: 2026-06-13
+specificationVersion: "0.19"
+tags:
+  - LLM
+  - Logging
+  - Observability
+  - Evaluation
+  - Feedback
+  - Debugging
+  - LLMOps
+  - Artificial Intelligence
+  - Machine Learning
+apis:
+  - name: Log10 LLM Logging API
+    description: >
+      REST API for capturing LLM completions, managing sessions, applying tags,
+      and retrieving logged request and response data across LLM provider calls.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.log10.io/observability/logs
+    baseURL: https://log10.io
+    tags:
+      - Logging
+      - Completions
+      - Sessions
+      - Tags
+    properties:
+      - type: Documentation
+        url: https://docs.log10.io/observability/logs
+  - name: Log10 Feedback API
+    description: >
+      API for submitting human and automated feedback on LLM completions,
+      defining feedback tasks with structured scales, and accessing AutoFeedback
+      predictions via GraphQL using completion identifiers.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.log10.io/feedback/feedback
+    baseURL: https://log10.io
+    tags:
+      - Feedback
+      - Evaluation
+      - AutoFeedback
+      - GraphQL
+    properties:
+      - type: Documentation
+        url: https://docs.log10.io/feedback/feedback
+  - name: Log10 Evaluation API
+    description: >
+      API for running automated evaluations and benchmarking logged completions
+      across multiple LLM providers, generating performance reports and accuracy
+      insights to support model selection and prompt optimization workflows.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.log10.io/feedback/auto_feedback
+    baseURL: https://log10.io
+    tags:
+      - Evaluation
+      - Benchmarking
+      - Model Comparison
+      - Accuracy
+    properties:
+      - type: Documentation
+        url: https://docs.log10.io/feedback/auto_feedback
+common:
+  - type: Website
+    url: https://log10.io
+  - type: Documentation
+    url: https://docs.log10.io
+  - type: GitHubOrg
+    url: https://github.com/log10-io
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/log10-io
+  - type: Blog
+    url: https://log10.io/news
+  - type: Pricing
+    url: https://log10.io/pricing
+  - type: StatusPage
+    url: https://trust.log10.io
+  - type: X
+    url: https://x.com/log10io
+  - type: Plans
+    url: plans/log10-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/log10-rate-limits.yml
+  - type: FinOps
+    url: finops/log10-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

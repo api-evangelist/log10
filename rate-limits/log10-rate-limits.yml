@@ -1,0 +1,55 @@
+name: Log10 Rate Limits
+description: >
+  Log10 applies rate limits to its REST and GraphQL API to ensure platform
+  stability. The free tier accommodates up to 1 million logged requests in
+  total, while the Pro plan offers unlimited request logging. Specific
+  per-minute and per-second limits are not publicly documented; contact
+  Log10 support for enterprise-grade limit configurations.
+url: https://docs.log10.io
+specificationVersion: "0.1"
+rateLimits:
+  - name: Free Tier Request Cap
+    description: >
+      The Free plan permits logging up to 1 million LLM completion requests
+      in total. This encompasses all API calls to log completions, retrieve
+      logs, and submit feedback.
+    limit: 1000000
+    unit: total-requests
+    scope: account
+    plan: Free
+  - name: Pro Tier Requests
+    description: >
+      The Pro plan provides unlimited logged requests with no hard cap on
+      the number of completions logged to the platform.
+    limit: unlimited
+    unit: requests
+    scope: account
+    plan: Pro
+  - name: API Token Authentication
+    description: >
+      All API calls require a valid LOG10_TOKEN (personal API token) and
+      LOG10_ORG_ID. Requests with invalid or missing credentials are rejected
+      with a 401 status. Token-level throttling may apply at the platform's
+      discretion.
+    limit: 1
+    unit: token-per-user
+    scope: user
+    plan: All
+  - name: AutoFeedback GraphQL
+    description: >
+      AutoFeedback predictions are accessed via the Log10 GraphQL API.
+      Rate limits for GraphQL queries are not publicly specified and are
+      subject to plan-level entitlements.
+    limit: unspecified
+    unit: queries-per-minute
+    scope: account
+    plan: Pro
+  - name: Automatic Retry
+    description: >
+      The Python client SDK includes automatic exponential backoff and retry
+      logic for transient errors, reducing the impact of temporary rate
+      limiting or connectivity issues.
+    limit: unspecified
+    unit: retries
+    scope: sdk
+    plan: All

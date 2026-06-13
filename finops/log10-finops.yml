@@ -1,0 +1,86 @@
+name: Log10 FinOps
+description: >
+  Financial operations and cost management framework for Log10 LLM logging
+  and observability platform. Log10 provides per-model usage tracking and
+  cost analytics to help teams understand and optimize spending across
+  multiple LLM providers.
+url: https://docs.log10.io/observability/model_usage_stats
+specificationVersion: "1.0"
+framework: FOCUS
+costs:
+  - name: Platform Subscription
+    description: >
+      Recurring subscription cost for Log10 platform access. The Free tier
+      is available at no cost up to 1 million requests. The Pro and Enterprise
+      tiers are priced on a contact-for-pricing basis, typically billed monthly
+      or annually.
+    type: subscription
+    category: SaaS
+    currency: USD
+    cadence: monthly
+    plans:
+      - name: Free
+        amount: 0
+      - name: Pro
+        amount: contact-for-pricing
+      - name: Enterprise
+        amount: contact-for-pricing
+  - name: LLM Provider Pass-Through Costs
+    description: >
+      Log10 itself does not charge per token for LLM inference. Costs for
+      underlying LLM calls (OpenAI, Anthropic, Google, Mistral, Meta Llama)
+      are billed directly by those providers and passed through transparently.
+      Log10 surfaces per-model token usage and cost attribution data to
+      support cost allocation and chargeback workflows.
+    type: pass-through
+    category: Consumption
+    currency: USD
+    cadence: usage-based
+    notes: Billed directly by the upstream LLM provider, not by Log10.
+  - name: BigQuery Data Store Integration
+    description: >
+      Enterprise customers may route log data to Google BigQuery for long-term
+      storage and analytics. BigQuery storage and query costs are billed by
+      Google Cloud and are not included in Log10 subscription pricing.
+    type: pass-through
+    category: Storage
+    currency: USD
+    cadence: usage-based
+    plan: Enterprise
+costOptimization:
+  - name: Per-Model Usage Tracking
+    description: >
+      Log10's Cost Tracking API and model usage statistics enable teams to
+      identify which models, teams, or features are driving the highest LLM
+      inference costs, enabling targeted optimization.
+    url: https://docs.log10.io/observability/model_usage_stats
+  - name: Tag-Based Cost Allocation
+    description: >
+      Apply tags to logged completions to segment costs by feature, team,
+      user cohort, or deployment environment. Enables chargeback and
+      showback reporting across organizational units.
+    url: https://docs.log10.io/observability/logs
+  - name: Model Benchmarking
+    description: >
+      Use the evaluation and benchmarking API to compare cost versus accuracy
+      tradeoffs across LLM providers and model sizes, enabling informed
+      decisions on model selection to optimize the cost-accuracy curve.
+    url: https://docs.log10.io/feedback/auto_feedback
+  - name: AutoFeedback for Accuracy
+    description: >
+      AutoFeedback replaces expensive human review workflows with AI-generated
+      feedback at scale, reducing manual evaluation costs while maintaining
+      quality signal for model improvement.
+    url: https://docs.log10.io/feedback/auto_feedback
+allocation:
+  - name: Organization-Level Attribution
+    description: >
+      All costs and usage are tracked at the organization level using the
+      LOG10_ORG_ID. Teams operating shared LLM infrastructure can use tags
+      to subdivide usage within a single organization account.
+  - name: Enterprise Cost Reporting
+    description: >
+      Per-model usage reporting with filtering by tags is available to
+      enterprise plan users, enabling granular cost attribution and
+      reporting aligned with FinOps best practices.
+    plan: Enterprise
