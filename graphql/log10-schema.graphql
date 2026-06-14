@@ -1,0 +1,61 @@
+# Log10 GraphQL Schema
+# Endpoint: https://graphql.log10.io/graphql
+# Authentication: x-api-token header
+#
+# Schema reconstructed from Log10 Python SDK source (github.com/log10-io/log10)
+# covering confirmed types used in OrganizationFeedback and OrganizationCompletion queries.
+
+type Query {
+  organization(id: String!): Organization
+}
+
+type Organization {
+  id: String!
+  completion(id: String!): Completion
+  feedbackV2(
+    filter: String
+    taskId: String
+    page: Int
+    limit: Int
+  ): FeedbackConnection
+}
+
+type Completion {
+  id: String!
+  autoFeedback: AutoFeedback
+}
+
+type AutoFeedback {
+  id: String!
+  status: String
+  jsonValues: JSON
+  comment: String
+}
+
+type FeedbackConnection {
+  pageInfo: PageInfo!
+  nodes: [Feedback!]!
+}
+
+type PageInfo {
+  totalCount: Int!
+  currentPage: Int!
+}
+
+type Feedback {
+  id: String!
+  jsonValues: JSON
+  task: FeedbackTask
+  completions: [CompletionRef!]
+}
+
+type FeedbackTask {
+  id: String!
+  name: String
+}
+
+type CompletionRef {
+  id: String!
+}
+
+scalar JSON
