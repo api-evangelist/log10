@@ -1,18 +1,19 @@
 {
-  "provider": "log10",
-  "blogUrl": "https://log10.io/news",
-  "rssUrl": null,
-  "rssAvailable": false,
-  "notes": "The log10.io/news and blog pages redirect to everest.log10.io; no RSS or Atom feed URL was discoverable. Blog content available at https://everest.log10.io/blog via Substack (https://arjunbansal.substack.com/subscribe for research updates).",
-  "lastChecked": "2026-06-13",
-  "posts": [],
   "repo": "log10",
   "feeds": [
+    {
+      "source": "https://arjunbansal.substack.com/feed",
+      "feed_url": "https://arjunbansal.substack.com/feed",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
     {
       "source": "https://www.linkedin.com/company/log10-io",
       "error": "HTTPError"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "notes": "log10.io/news 302-redirects to everest.log10.io; the research blog is published via Substack at arjunbansal.substack.com (feed valid). everest.log10.io/feed returns 404. Newest Substack post dates to Dec 2024, before the prior fetch cutoff, so nothing new this run.",
+  "fetched": "2026-06-27T12:03:07Z",
+  "post_count": 0
 }
