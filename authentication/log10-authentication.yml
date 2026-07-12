@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/log10-logging-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: Log10Token
+  type: apiKey
+  in: header
+  parameter: X-Log10-Token
+  sources:
+  - openapi/log10-logging-openapi.yml

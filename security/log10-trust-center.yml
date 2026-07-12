@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://trust.log10.io/
+url: https://trust.log10.io/
+certifications:
+- SOC 2
+- HIPAA
+evidence:
+- source: https://trust.log10.io/
+  keywords:
+  - soc 2
+  - hipaa
+  - trust center
+  - compliance certification

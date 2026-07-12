@@ -83,6 +83,12 @@ apis:
   - type: Documentation
     url: https://docs.log10.io/feedback/auto_feedback
 common:
+- type: TrustCenter
+  url: security/log10-trust-center.yml
+- type: DomainSecurity
+  url: security/log10-domain-security.yml
+- type: Authentication
+  url: authentication/log10-authentication.yml
 - type: Website
   url: https://log10.io
 - type: Documentation
