@@ -13,7 +13,7 @@
       "error": "HTTPError"
     }
   ],
-  "notes": "log10.io/news 302-redirects to everest.log10.io; the research blog is published via Substack at arjunbansal.substack.com (feed valid). everest.log10.io/feed returns 404. Newest Substack post dates to Dec 2024, before the prior fetch cutoff, so nothing new this run.",
-  "fetched": "2026-06-27T12:03:07Z",
-  "post_count": 0
+  "notes": "log10.io/news 302-redirects to everest.log10.io; the research blog is published via Substack at arjunbansal.substack.com (feed valid). everest.log10.io/feed returns 404. Newest Substack post still dates to Dec 2024, before the prior fetch cutoff, so nothing new this run.",
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 14
 }
