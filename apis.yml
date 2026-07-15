@@ -83,6 +83,8 @@ apis:
   - type: Documentation
     url: https://docs.log10.io/feedback/auto_feedback
 common:
+- type: AgenticAccess
+  url: agentic-access/log10-agentic-access.yml
 - type: TrustCenter
   url: security/log10-trust-center.yml
 - type: DomainSecurity
