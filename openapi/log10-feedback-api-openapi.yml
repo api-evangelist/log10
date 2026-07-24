@@ -1,0 +1,183 @@
+openapi: 3.0.3
+info:
+  title: Log10 API Spec Completions Feedback API
+  description: Log10 Feedback API Spec
+  version: 1.0.0
+servers:
+- url: https://log10.io
+tags:
+- name: Feedback
+  description: Feedback
+paths:
+  /api/v1/feedback/{feedbackId}:
+    get:
+      tags:
+      - Feedback
+      parameters:
+      - name: feedbackId
+        in: path
+        required: true
+        description: The feedback id to fetch.
+        schema:
+          type: string
+      - name: X-Log10-Organization
+        in: header
+        required: true
+        schema:
+          type: string
+      operationId: get
+      summary: Fetch feedback by id.
+      security:
+      - Log10Token: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Feedback'
+  /api/v1/feedback:
+    get:
+      tags:
+      - Feedback
+      operationId: list
+      summary: List feedback
+      security:
+      - Log10Token: []
+      parameters:
+      - name: X-Log10-Organization
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                offset:
+                  type: integer
+                  description: The offset to start fetching feedback from.
+                limit:
+                  type: integer
+                  description: The number of feedback to fetch.
+                completion_id:
+                  type: string
+                  description: The completion id to fetch feedback for.
+                task_id:
+                  type: string
+                  description: The task id to fetch feedback for.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  feedback:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Feedback'
+    post:
+      summary: Upload a piece of feedback
+      tags:
+      - Feedback
+      operationId: upload
+      security:
+      - Log10Token: []
+      parameters:
+      - name: X-Log10-Organization
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - allOf:
+                - $ref: '#/components/schemas/Feedback'
+                - type: object
+                  required:
+                  - allow_unmatched_feedback
+                  - completion_tags_selector
+                  properties:
+                    allow_unmatched_feedback:
+                      type: boolean
+                      description: Whether to allow unmatched feedback. Defaults to false.
+                      default: false
+                    max_matched_completions:
+                      type: integer
+                      description: The maximum number of matched completions. Returns error if exceeded. Defaults to 100.
+                      default: 100
+                    completion_tags_selector:
+                      type: array
+                      description: The completion tags associated with this feedback.
+                      items:
+                        type: string
+              - allOf:
+                - $ref: '#/components/schemas/Feedback'
+                - type: object
+                  required:
+                  - completion_ids
+                  properties:
+                    completion_ids:
+                      type: array
+                      description: The completion ids to associate with this feedback.
+                      items:
+                        type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Feedback'
+components:
+  schemas:
+    Feedback:
+      type: object
+      required:
+      - task_id
+      - json_values
+      - matched_completion_ids
+      - comment
+      properties:
+        id:
+          type: string
+          description: The unique identifier for this feedback.
+        created_at_ms:
+          type: number
+          description: The epoch this schema was created.
+        task_id:
+          type: string
+          description: The unique identifier for the task associated with this feedback.
+        json_values:
+          type: object
+          description: The values of the feedback. Must be valid JSON according to the task schema.
+        matched_completion_ids:
+          type: array
+          description: The matched completion ids associated with this feedback.
+          items:
+            type: string
+        comment:
+          type: string
+          description: The comment associated with this feedback.
+        completions_summary:
+          type: string
+  securitySchemes:
+    Log10Token:
+      type: apiKey
+      in: header
+      name: X-Log10-Token
+x-speakeasy-globals:
+  parameters:
+  - name: X-Log10-Organization
+    in: header
+    required: true
+    schema:
+      type: string

@@ -1,0 +1,57 @@
+openapi: 3.0.3
+info:
+  title: Log10 Feedback API Spec Completions Sessions API
+  description: Log10 Feedback API Spec
+  version: 1.0.0
+servers:
+- url: https://log10.io
+tags:
+- name: Sessions
+  description: Sessions
+paths:
+  /api/v1/sessions:
+    post:
+      tags:
+      - Sessions
+      x-speakeasy-name-override: create
+      x-speakeasy-usage-example: true
+      operationId: createSession
+      summary: Create a session
+      security:
+      - Log10Token: []
+      parameters:
+      - name: X-Log10-Organization
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  session:
+                    $ref: '#/components/schemas/Session'
+components:
+  schemas:
+    Session:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for this session.
+  securitySchemes:
+    Log10Token:
+      type: apiKey
+      in: header
+      name: X-Log10-Token
+x-speakeasy-globals:
+  parameters:
+  - name: X-Log10-Organization
+    in: header
+    required: true
+    schema:
+      type: string

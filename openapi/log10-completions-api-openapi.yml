@@ -1,0 +1,188 @@
+openapi: 3.0.3
+info:
+  title: Log10 Feedback API Spec Completions API
+  description: Log10 Feedback API Spec
+  version: 1.0.0
+servers:
+- url: https://log10.io
+tags:
+- name: Completions
+  description: Completions
+paths:
+  /api/v1/completions:
+    post:
+      tags:
+      - Completions
+      operationId: create
+      summary: Create a completion
+      security:
+      - Log10Token: []
+      parameters:
+      - name: X-Log10-Organization
+        in: header
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Completion'
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                x-speakeasy-type-override: any
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Completion'
+  /api/v1/completions/{completionId}:
+    post:
+      parameters:
+      - name: completionId
+        in: path
+        required: true
+        description: The completion id to update.
+        schema:
+          type: string
+      - name: X-Log10-Organization
+        in: header
+        required: true
+        schema:
+          type: string
+      tags:
+      - Completions
+      operationId: update
+      summary: Update completion by id.
+      security:
+      - Log10Token: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Completion'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Completion'
+  /api/v1/completions/ungraded:
+    get:
+      tags:
+      - Completions
+      operationId: listUngraded
+      summary: List ungraded completions i.e. completions that have not been associated with feedback but matches task selector.
+      security:
+      - Log10Token: []
+      parameters:
+      - name: X-Log10-Organization
+        in: header
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  completions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Completion'
+components:
+  schemas:
+    Completion:
+      type: object
+      required:
+      - organization_id
+      properties:
+        id:
+          type: string
+          description: The unique identifier for this task.
+        organization_id:
+          type: string
+          description: The unique identifier for the organization.
+        kind:
+          type: string
+          description: The kind of completion i.e. chat messages or prompt
+          enum:
+          - chat
+          - prompt
+        status:
+          type: string
+          description: The status of this completion.
+          enum:
+          - started
+          - finished
+          - failed
+        tags:
+          type: array
+          description: The tags for this completion.
+          items:
+            type: string
+        request:
+          type: object
+          $ref: openai.yaml#/components/schemas/CreateChatCompletionRequest
+        response:
+          type: object
+          $ref: openai.yaml#/components/schemas/CreateChatCompletionResponse
+        stacktrace:
+          type: array
+          description: The stacktrace for this completion.
+          items:
+            type: object
+            properties:
+              file:
+                type: string
+                description: The file associated with this stacktrace.
+              line:
+                type: string
+                description: The line associated with this stacktrace.
+              lineno:
+                type: number
+                description: The line number associated with this stacktrace.
+              name:
+                type: string
+                description: The function or module associated with this stacktrace.
+            required:
+            - file
+            - line
+            - lineno
+            - name
+        session_id:
+          type: string
+          description: The session id for this completion.
+        duration:
+          type: number
+          description: The duration of this completion in seconds.
+        failure_kind:
+          type: string
+          description: The failure kind of this completion.
+        failure_reason:
+          type: string
+          description: The failure reason of this completion.
+  securitySchemes:
+    Log10Token:
+      type: apiKey
+      in: header
+      name: X-Log10-Token
+x-speakeasy-globals:
+  parameters:
+  - name: X-Log10-Organization
+    in: header
+    required: true
+    schema:
+      type: string

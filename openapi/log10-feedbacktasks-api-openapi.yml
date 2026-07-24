@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: Log10 Feedback API Spec Completions FeedbackTasks API
+  description: Log10 Feedback API Spec
+  version: 1.0.0
+servers:
+- url: https://log10.io
+tags:
+- name: FeedbackTasks
+  description: FeedbackTasks
+paths:
+  /api/v1/feedback_task:
+    get:
+      tags:
+      - FeedbackTasks
+      x-speakeasy-name-override: list
+      operationId: listFeedbackTasks
+      summary: List feedback tasks.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+    post:
+      tags:
+      - FeedbackTasks
+      x-speakeasy-name-override: create
+      operationId: createFeedbackTask
+      summary: Create a new task.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+  /api/v1/feedback_task/{taskId}:
+    get:
+      parameters:
+      - name: taskId
+        in: path
+        required: true
+        description: The task id to fetch.
+        schema:
+          type: string
+      tags:
+      - FeedbackTasks
+      x-speakeasy-name-override: get
+      operationId: getFeedbackTask
+      summary: Retrieves feedback task `taskId`.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+components:
+  schemas:
+    Task:
+      type: object
+      required:
+      - name
+      - instruction
+      - json_schema
+      - completion_tags_selector
+      properties:
+        id:
+          type: string
+          description: The unique identifier for this task.
+        created_at_ms:
+          type: number
+          description: The epoch this schema was created.
+        json_schema:
+          type: object
+          description: The schema of the task. Must be valid JSON Schema.
+        name:
+          type: string
+          description: The name of the task.
+        instruction:
+          type: string
+          description: The instructions for this task.
+        completion_tags_selector:
+          type: object
+          description: The completion tag matching with this task i.e. surfaced as needing feedback.
+          items:
+            type: string
+  securitySchemes:
+    Log10Token:
+      type: apiKey
+      in: header
+      name: X-Log10-Token
+x-speakeasy-globals:
+  parameters:
+  - name: X-Log10-Organization
+    in: header
+    required: true
+    schema:
+      type: string
