@@ -1,0 +1,20 @@
+{
+  "provider": "log10",
+  "sources": [
+    "log10-completions-api-openapi.yml",
+    "log10-feedback-api-openapi.yml",
+    "log10-feedbacktasks-api-openapi.yml",
+    "log10-sessions-api-openapi.yml"
+  ],
+  "outputs": [
+    "log10-completions-api-openapi.yml",
+    "log10-feedback-api-openapi.yml",
+    "log10-feedbacktasks-api-openapi.yml",
+    "log10-sessions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
