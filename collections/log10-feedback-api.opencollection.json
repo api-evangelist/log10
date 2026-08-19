@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Log10 API Spec Completions Feedback API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Feedback",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch feedback by id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://log10.io/api/v1/feedback/:feedbackId",
+            "headers": [
+              {
+                "name": "X-Log10-Organization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "feedbackId",
+                "value": "",
+                "type": "path",
+                "description": "The feedback id to fetch."
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Log10-Token",
+              "value": "{{X-Log10-Token}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetch feedback by id."
+        },
+        {
+          "info": {
+            "name": "List feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://log10.io/api/v1/feedback",
+            "headers": [
+              {
+                "name": "X-Log10-Organization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Log10-Token",
+              "value": "{{X-Log10-Token}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List feedback"
+        },
+        {
+          "info": {
+            "name": "Upload a piece of feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://log10.io/api/v1/feedback",
+            "headers": [
+              {
+                "name": "X-Log10-Organization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Log10-Token",
+              "value": "{{X-Log10-Token}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Upload a piece of feedback"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Log10 Feedback API Spec Completions Sessions API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://log10.io/api/v1/sessions",
+            "headers": [
+              {
+                "name": "X-Log10-Organization",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Log10-Token",
+              "value": "{{X-Log10-Token}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a session"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,413 @@
+{
+  "item": [
+    {
+      "id": "73cdf25b-0f63-48e3-b655-7cde50b6bdac",
+      "name": "Feedback",
+      "description": {
+        "content": "Feedback",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "708116e2-878f-4c68-af92-e10d32c39b23",
+          "name": "Fetch feedback by id.",
+          "request": {
+            "name": "Fetch feedback by id.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "feedback",
+                ":feedbackId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "feedbackId",
+                  "description": "(Required) The feedback id to fetch."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Log10-Organization",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Log10-Token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "940db934-247f-4c9d-8e62-817ea93d7757",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "feedback",
+                    ":feedbackId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "feedbackId",
+                      "description": "(Required) The feedback id to fetch."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Log10-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Log10-Organization",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"task_id\": \"string\",\n  \"json_values\": {},\n  \"matched_completion_ids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"comment\": \"string\",\n  \"id\": \"string\",\n  \"created_at_ms\": 8005.744202250969,\n  \"completions_summary\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec295c58-5991-4c2e-b252-fe3111b9e202",
+          "name": "List feedback",
+          "request": {
+            "name": "List feedback",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "feedback"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Log10-Organization",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Log10-Token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"offset\": \"<integer>\",\n  \"limit\": \"<integer>\",\n  \"completion_id\": \"<string>\",\n  \"task_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f3f00996-39bc-4aca-ae79-48352f25dd53",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "feedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Log10-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Log10-Organization",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"offset\": \"<integer>\",\n  \"limit\": \"<integer>\",\n  \"completion_id\": \"<string>\",\n  \"task_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"feedback\": [\n    {\n      \"task_id\": \"string\",\n      \"json_values\": {},\n      \"matched_completion_ids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"comment\": \"string\",\n      \"id\": \"string\",\n      \"created_at_ms\": 9818.11444237127,\n      \"completions_summary\": \"string\"\n    },\n    {\n      \"task_id\": \"string\",\n      \"json_values\": {},\n      \"matched_completion_ids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"comment\": \"string\",\n      \"id\": \"string\",\n      \"created_at_ms\": 5411.4169501588,\n      \"completions_summary\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e9c4590-e7c1-4473-815a-97d752e4d2f3",
+          "name": "Upload a piece of feedback",
+          "request": {
+            "name": "Upload a piece of feedback",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "feedback"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Log10-Organization",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Log10-Token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"allow_unmatched_feedback\": false,\n  \"comment\": \"<string>\",\n  \"completion_tags_selector\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"json_values\": \"<object>\",\n  \"matched_completion_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"task_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"created_at_ms\": \"<number>\",\n  \"completions_summary\": \"<string>\",\n  \"max_matched_completions\": 100\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6f769a37-3825-4137-83c0-814d45c76107",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "feedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Log10-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Log10-Organization",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"allow_unmatched_feedback\": false,\n  \"comment\": \"<string>\",\n  \"completion_tags_selector\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"json_values\": \"<object>\",\n  \"matched_completion_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"task_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"created_at_ms\": \"<number>\",\n  \"completions_summary\": \"<string>\",\n  \"max_matched_completions\": 100\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"task_id\": \"<string>\",\n  \"json_values\": \"<object>\",\n  \"matched_completion_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"comment\": \"<string>\",\n  \"id\": \"<string>\",\n  \"created_at_ms\": \"<number>\",\n  \"completions_summary\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://log10.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "0e8f5358-f21c-4b0c-8055-157a541d4455",
+    "name": "Log10 API Spec Completions Feedback API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Log10 Feedback API Spec",
+      "type": "text/plain"
+    }
+  }
+}

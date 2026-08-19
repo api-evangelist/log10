@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Log10 Feedback API Spec Completions FeedbackTasks API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FeedbackTasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List feedback tasks.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://log10.io/api/v1/feedback_task"
+          },
+          "docs": "List feedback tasks."
+        },
+        {
+          "info": {
+            "name": "Create a new task.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://log10.io/api/v1/feedback_task",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new task."
+        },
+        {
+          "info": {
+            "name": "Retrieves feedback task `taskId`.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://log10.io/api/v1/feedback_task/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "The task id to fetch."
+              }
+            ]
+          },
+          "docs": "Retrieves feedback task `taskId`."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

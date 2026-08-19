@@ -1,0 +1,284 @@
+{
+  "item": [
+    {
+      "id": "584572b6-a9e1-4c93-bcba-afeffed3b582",
+      "name": "FeedbackTasks",
+      "description": {
+        "content": "FeedbackTasks",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4c3a0d74-52cc-41f8-8b05-da9e1947456f",
+          "name": "List feedback tasks.",
+          "request": {
+            "name": "List feedback tasks.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "feedback_task"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0af6912-2eea-4150-9925-ce8be317994e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "feedback_task"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"instruction\": \"string\",\n    \"json_schema\": {},\n    \"completion_tags_selector\": {},\n    \"id\": \"string\",\n    \"created_at_ms\": 5162.5810624432615\n  },\n  {\n    \"name\": \"string\",\n    \"instruction\": \"string\",\n    \"json_schema\": {},\n    \"completion_tags_selector\": {},\n    \"id\": \"string\",\n    \"created_at_ms\": 2599.5901599713966\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5a870522-bfdb-4c69-870e-19fb365a79a1",
+          "name": "Create a new task.",
+          "request": {
+            "name": "Create a new task.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "feedback_task"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"instruction\": \"<string>\",\n  \"json_schema\": \"<object>\",\n  \"completion_tags_selector\": \"<object>\",\n  \"id\": \"<string>\",\n  \"created_at_ms\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "efbad8ae-046d-41b9-979a-1b1cbeedf2f5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "feedback_task"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"instruction\": \"<string>\",\n  \"json_schema\": \"<object>\",\n  \"completion_tags_selector\": \"<object>\",\n  \"id\": \"<string>\",\n  \"created_at_ms\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"instruction\": \"<string>\",\n  \"json_schema\": \"<object>\",\n  \"completion_tags_selector\": \"<object>\",\n  \"id\": \"<string>\",\n  \"created_at_ms\": \"<number>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04b19cb6-1fa5-4ebb-9202-765cc2e68b5b",
+          "name": "Retrieves feedback task `taskId`.",
+          "request": {
+            "name": "Retrieves feedback task `taskId`.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "feedback_task",
+                ":taskId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) The task id to fetch."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c2a649b-24e2-4ac7-80e8-453b9085a49a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "feedback_task",
+                    ":taskId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) The task id to fetch."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"<string>\",\n  \"instruction\": \"<string>\",\n  \"json_schema\": \"<object>\",\n  \"completion_tags_selector\": \"<object>\",\n  \"id\": \"<string>\",\n  \"created_at_ms\": \"<number>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://log10.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "08641998-818c-4fb5-b258-30fc1230f720",
+    "name": "Log10 Feedback API Spec Completions FeedbackTasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Log10 Feedback API Spec",
+      "type": "text/plain"
+    }
+  }
+}

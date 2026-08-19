@@ -1,0 +1,474 @@
+{
+  "item": [
+    {
+      "id": "b51ff9c5-9c09-4934-aa84-bdf5eeedf392",
+      "name": "Completions",
+      "description": {
+        "content": "Completions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "53e57a8d-8ecf-4486-86e4-fcae08ac1e19",
+          "name": "Create a completion",
+          "request": {
+            "name": "Create a completion",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Log10-Organization",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Log10-Token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organization_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"status\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"request\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n  },\n  \"response\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n  },\n  \"stacktrace\": [\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"session_id\": \"<string>\",\n  \"duration\": \"<number>\",\n  \"failure_kind\": \"<string>\",\n  \"failure_reason\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f03ece0f-d83b-40c1-be45-95a0ee8aebb4",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Log10-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Log10-Organization",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organization_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"status\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"request\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n  },\n  \"response\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n  },\n  \"stacktrace\": [\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"session_id\": \"<string>\",\n  \"duration\": \"<number>\",\n  \"failure_kind\": \"<string>\",\n  \"failure_reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cecceadb-7654-4d6a-a79e-e897b46f83cc",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "completions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Log10-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Log10-Organization",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organization_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"status\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"request\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n  },\n  \"response\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n  },\n  \"stacktrace\": [\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"session_id\": \"<string>\",\n  \"duration\": \"<number>\",\n  \"failure_kind\": \"<string>\",\n  \"failure_reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"organization_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"status\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"request\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n  },\n  \"response\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n  },\n  \"stacktrace\": [\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"session_id\": \"<string>\",\n  \"duration\": \"<number>\",\n  \"failure_kind\": \"<string>\",\n  \"failure_reason\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2eea3d98-5652-4569-bc42-04acd8dba1e5",
+          "name": "Update completion by id.",
+          "request": {
+            "name": "Update completion by id.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "completions",
+                ":completionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "completionId",
+                  "description": "(Required) The completion id to update."
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Log10-Organization",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Log10-Token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organization_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"status\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"request\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n  },\n  \"response\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n  },\n  \"stacktrace\": [\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"session_id\": \"<string>\",\n  \"duration\": \"<number>\",\n  \"failure_kind\": \"<string>\",\n  \"failure_reason\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5bec12ea-b622-468b-a0b7-e49c4f698681",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "completions",
+                    ":completionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "completionId",
+                      "description": "(Required) The completion id to update."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Log10-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Log10-Organization",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organization_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"status\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"request\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n  },\n  \"response\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n  },\n  \"stacktrace\": [\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"session_id\": \"<string>\",\n  \"duration\": \"<number>\",\n  \"failure_kind\": \"<string>\",\n  \"failure_reason\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"organization_id\": \"<string>\",\n  \"id\": \"<string>\",\n  \"kind\": \"<string>\",\n  \"status\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"request\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n  },\n  \"response\": {\n    \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n  },\n  \"stacktrace\": [\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"file\": \"<string>\",\n      \"line\": \"<string>\",\n      \"lineno\": \"<number>\",\n      \"name\": \"<string>\"\n    }\n  ],\n  \"session_id\": \"<string>\",\n  \"duration\": \"<number>\",\n  \"failure_kind\": \"<string>\",\n  \"failure_reason\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29749738-4c54-45f3-9338-2b5cca432b0c",
+          "name": "List ungraded completions i.e. completions that have not been associated with feedback but matches task selector.",
+          "request": {
+            "name": "List ungraded completions i.e. completions that have not been associated with feedback but matches task selector.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "completions",
+                "ungraded"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Log10-Organization",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "X-Log10-Token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a8eb15b3-cc59-4c20-ae9e-8c43f0743f97",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "completions",
+                    "ungraded"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-Log10-Token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Log10-Organization",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"completions\": [\n    {\n      \"organization_id\": \"<string>\",\n      \"id\": \"<string>\",\n      \"kind\": \"<string>\",\n      \"status\": \"<string>\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"request\": {\n        \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n      },\n      \"response\": {\n        \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n      },\n      \"stacktrace\": [\n        {\n          \"file\": \"<string>\",\n          \"line\": \"<string>\",\n          \"lineno\": \"<number>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"file\": \"<string>\",\n          \"line\": \"<string>\",\n          \"lineno\": \"<number>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"session_id\": \"<string>\",\n      \"duration\": \"<number>\",\n      \"failure_kind\": \"<string>\",\n      \"failure_reason\": \"<string>\"\n    },\n    {\n      \"organization_id\": \"<string>\",\n      \"id\": \"<string>\",\n      \"kind\": \"<string>\",\n      \"status\": \"<string>\",\n      \"tags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"request\": {\n        \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionRequest not found in the OpenAPI spec\"\n      },\n      \"response\": {\n        \"value\": \"reference openai.yaml#/components/schemas/CreateChatCompletionResponse not found in the OpenAPI spec\"\n      },\n      \"stacktrace\": [\n        {\n          \"file\": \"<string>\",\n          \"line\": \"<string>\",\n          \"lineno\": \"<number>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"file\": \"<string>\",\n          \"line\": \"<string>\",\n          \"lineno\": \"<number>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"session_id\": \"<string>\",\n      \"duration\": \"<number>\",\n      \"failure_kind\": \"<string>\",\n      \"failure_reason\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://log10.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "aedb1c8a-44d7-4034-b309-16985c700589",
+    "name": "Log10 Feedback API Spec Completions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Log10 Feedback API Spec",
+      "type": "text/plain"
+    }
+  }
+}

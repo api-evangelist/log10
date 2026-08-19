@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Log10 Feedback API Spec Completions API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Completions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://log10.io/api/v1/completions",
+            "headers": [
+              {
+                "name": "X-Log10-Organization",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Log10-Token",
+              "value": "{{X-Log10-Token}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a completion"
+        },
+        {
+          "info": {
+            "name": "Update completion by id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://log10.io/api/v1/completions/:completionId",
+            "headers": [
+              {
+                "name": "X-Log10-Organization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "completionId",
+                "value": "",
+                "type": "path",
+                "description": "The completion id to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "X-Log10-Token",
+              "value": "{{X-Log10-Token}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update completion by id."
+        },
+        {
+          "info": {
+            "name": "List ungraded completions i.e. completions that have not been associated with feedback but matches task selector.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://log10.io/api/v1/completions/ungraded",
+            "headers": [
+              {
+                "name": "X-Log10-Organization",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "X-Log10-Token",
+              "value": "{{X-Log10-Token}}",
+              "placement": "header"
+            }
+          },
+          "docs": "List ungraded completions i.e. completions that have not been associated with feedback but matches task selector."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
