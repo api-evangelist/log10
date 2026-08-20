@@ -39,6 +39,16 @@ tags:
 - Debugging
 - LLMOps
 - Artificial Intelligence
+- Machine-Learning
+tags_raw:
+- LLM
+- Logging
+- Observability
+- Evaluation
+- Feedback
+- Debugging
+- LLMOps
+- Artificial Intelligence
 - Machine Learning
 apis:
 - name: Log10 Feedback API
