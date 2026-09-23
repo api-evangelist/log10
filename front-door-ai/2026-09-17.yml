@@ -1,0 +1,32 @@
+# Front Door AI Index — log10 — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: log10
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: log10.io
+  final_host: everest.log10.io
+  ownership: own
+  owner: log10
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 18
+  host_score: 18
+  density: 22.93
+  words: 785
+  tiers:
+    agentic: 2
+    core: 7
+    model: 9
+  ambiguous: 3
+  top_terms:
+    AI: 4
+    Anthropic: 3
+    Bedrock: 3
+    LLMs: 3
+    OpenAI: 3
+    automation: 3
+    agentic: 1
+    prompts: 1

@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Log10 Feedback API Spec Completions API
   description: Log10 Feedback API Spec
@@ -60,7 +60,7 @@ paths:
       tags:
       - Completions
       operationId: update
-      summary: Update completion by id.
+      summary: Update completion by id
       security:
       - Log10Token: []
       requestBody:
@@ -81,7 +81,7 @@ paths:
       tags:
       - Completions
       operationId: listUngraded
-      summary: List ungraded completions i.e. completions that have not been associated with feedback but matches task selector.
+      summary: List ungraded completions i.e.
       security:
       - Log10Token: []
       parameters:

@@ -1,10 +1,7 @@
 {
   "provider": "log10",
   "sources": [
-    "log10-completions-api-openapi.yml",
-    "log10-feedback-api-openapi.yml",
-    "log10-feedbacktasks-api-openapi.yml",
-    "log10-sessions-api-openapi.yml"
+    "_original/log10-logging-openapi.yml"
   ],
   "outputs": [
     "log10-completions-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "log10-logging-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "log10-completions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "log10-feedback-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "log10-feedbacktasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "log10-sessions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
