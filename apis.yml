@@ -52,7 +52,7 @@ tags:
 - Debugging
 - LLMOps
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 tags_raw:
 - LLM
 - Logging
@@ -63,6 +63,7 @@ tags_raw:
 - LLMOps
 - Artificial Intelligence
 - Machine Learning
+- Machine-Learning
 apis:
 - name: Log10 Feedback API
   description: >
@@ -70,7 +71,6 @@ apis:
     scales, and accessing AutoFeedback predictions via GraphQL using completion identifiers.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://docs.log10.io/feedback/feedback
-  baseURL: https://log10.io
   tags:
   - Feedback
   - Evaluation
@@ -86,7 +86,6 @@ apis:
     workflows.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://docs.log10.io/feedback/auto_feedback
-  baseURL: https://log10.io
   tags:
   - Evaluation
   - Benchmarking
@@ -99,7 +98,6 @@ apis:
   name: Log10 Completions API
   description: Completions
   humanURL: https://docs.log10.io/observability/logs
-  baseURL: https://log10.io
   tags:
   - Completions
   properties:
@@ -113,7 +111,6 @@ apis:
   name: Log10 Feedback API
   description: Feedback
   humanURL: https://docs.log10.io/observability/logs
-  baseURL: https://log10.io
   tags:
   - Feedback
   properties:
@@ -127,7 +124,6 @@ apis:
   name: Log10 FeedbackTasks API
   description: FeedbackTasks
   humanURL: https://docs.log10.io/observability/logs
-  baseURL: https://log10.io
   tags:
   - FeedbackTasks
   properties:
@@ -141,7 +137,6 @@ apis:
   name: Log10 Sessions API
   description: Sessions
   humanURL: https://docs.log10.io/observability/logs
-  baseURL: https://log10.io
   tags:
   - Sessions
   properties:
