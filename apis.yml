@@ -147,6 +147,9 @@ apis:
   - type: GraphQL
     url: graphql/log10-graphql.md
 common:
+- type: CapabilityMap
+  url: capabilities/log10-capability-edges.yml
+  name: Log10 Business Capability Map
 - type: AgenticAccess
   url: agentic-access/log10-agentic-access.yml
 - type: TrustCenter

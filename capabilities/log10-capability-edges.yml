@@ -1,0 +1,36 @@
+slug: log10
+provider: Log10
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Completions
+  spec_file: log10-completions-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.75
+  evidence: POST /api/v1/completions create 'Create a completion'; GET /api/v1/completions/ungraded 'List
+    ungraded completions'
+  reason: Log10 is an LLMOps platform; the Completions tag logs and grades LLM model outputs, which is
+    AI/ML model lifecycle and evaluation tooling (Artificial Intelligence Management) rather than any
+    business-domain capability.
+- tag: Feedback
+  spec_file: log10-feedback-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: POST /api/v1/feedback upload 'Upload a piece of feedback'
+  reason: Feedback here is human/AI evaluation labels on LLM completions for model evaluation, not customer
+    voice-of-customer feedback. Supports AI/ML model lifecycle (MLOps) tooling. Homograph risk with BC-430.50
+    explicitly rejected.
