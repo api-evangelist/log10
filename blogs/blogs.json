@@ -24,7 +24,7 @@
     }
   ],
   "notes": "log10.io/news 302-redirects to everest.log10.io; the research blog is published via Substack at arjunbansal.substack.com (feed valid). everest.log10.io/feed returns 404. Newest Substack post still dates to Dec 2024, before the prior fetch cutoff, so nothing new this run.",
-  "fetched": "2026-10-10T13:15:00Z",
+  "fetched": "2026-10-17T14:53:57Z",
   "post_count": 18,
   "feed_nature": "undetermined",
   "feed_nature_basis": null,
